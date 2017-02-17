@@ -2,9 +2,9 @@ FROM alpine:latest
 MAINTAINER Arun Neelicattu <arun.neelicattu@gmail.com>
 
 RUN apk --no-cache add --virtual oxidized-runtime \
-        ruby git libssh sqlite-libs \
+        ruby git libssh2 sqlite-libs libressl \
     && apk --no-cache add --virtual oxidized-build-deps \
-        ruby-dev cmake make libssh-dev g++ sqlite-dev \
+        ruby-dev cmake make libssh2-dev g++ sqlite-dev libressl-dev \
     && gem install \
          --no-ri --no-rdoc \
         json aws-sdk slack-api \
