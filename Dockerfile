@@ -9,7 +9,7 @@ RUN apk --no-cache add --virtual oxidized-runtime \
          --no-ri --no-rdoc \
         json aws-sdk slack-api \
         oxidized:0.19.0 oxidized-web:0.8.0 \
-    && apk --no-cache del oxidized-build-deps \
+    && apk --no-cache del oxidized-build-deps
 
 RUN mkdir -p /root/.config /etc/oxidized \
     && ln -sf /etc/oxidized /root/.config/oxidized
