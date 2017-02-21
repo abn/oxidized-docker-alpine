@@ -11,10 +11,10 @@ RUN apk --no-cache add --virtual oxidized-runtime \
         oxidized:0.19.0 oxidized-web:0.8.0 \
     && apk --no-cache del oxidized-build-deps
 
-RUN mkdir -p /root/.config /etc/oxidized \
+RUN mkdir -p /root/.config /etc/oxidized /var/run/oxidized /var/lib/oxidized \
     && ln -sf /etc/oxidized /root/.config/oxidized
 
-VOLUME ["/etc/oxidized"]
+VOLUME ["/etc/oxidized", "/var/run/oxidized", "/var/lib/oxidized"]
 
 EXPOSE 8888/tcp
 
